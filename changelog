@@ -1,4 +1,16 @@
-commit 8bbe92ca11a31a32424d604723b32a6be02e11c9 (HEAD -> master, origin/master, origin/HEAD)
+commit ed5ca1ab0439f12d89fa855a91632be11c8d9f62 (HEAD -> master, origin/master, origin/HEAD)
+Author: config <Palencia>
+Date:   Sat Sep 26 12:17:09 2020 -0400
+
+    * reemplazo de codigo
+
+commit e48141895e6365451881c7d926c646bc590a40e9
+Author: config <Palencia>
+Date:   Sat Sep 26 12:16:21 2020 -0400
+
+    * changelog
+
+commit 8bbe92ca11a31a32424d604723b32a6be02e11c9
 Author: config <Palencia>
 Date:   Sat Sep 26 12:16:08 2020 -0400
 
