@@ -2,6 +2,7 @@
 # Made by Sinfallas <sinfallas@yahoo.com>
 # Licence: GPL-2
 LC_ALL=C
+mac="/tmp/mac.txt"
 
 if [[ "$EUID" != "0" ]]; then
 	echo -e "\e[00;31mERROR: Debe ser root\e[00m"
@@ -23,8 +24,14 @@ case "$1" in
 
 	multi)
 		clear
-		cat $2 | tr [a-z] [A-Z] > /tmp/mac.txt
-		for f in $(cat /tmp/mac.txt | cut -c 1-17)
+		if [[ -f $2 ]]; then
+			cat $2 | tr [a-z] [A-Z] > "$mac"
+			chmod 666 "$mac"
+		else
+			echo "ERROR: Archivo no encontrado."
+			exit 1
+		fi
+		for f in $(cat $mac | cut -c 1-17)
 		do
 			echo -e "\e[00;1;92m$f\e[00m"
 			echo -e $(echo $(printf 'f%.0s' {1..12}; printf "$(echo $f | sed 's/://g')%.0s" {1..16}) | sed -e 's/../\\x&/g') | nc -w1 -u -b 255.255.255.255 4000
